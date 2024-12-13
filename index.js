@@ -109,6 +109,10 @@ app.delete("/pemain/:liga/:id", async (req, res) => {
   }
 });
 
+app.get("*", (req, res) => {
+  res.status(404).json({ message: "Url yang anda berikan tidak ada!" });
+});
+
 app.listen(port, () => {
   console.log("Server is running on port " + port);
 });
